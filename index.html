@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zach Arvieux | Information Security Analyst</title>
+  <style>
+    body { margin:0; font-family:Arial, sans-serif; background:#0a0a0f; color:#e6e6e6; }
+    section { max-width:900px; margin:40px auto; padding:0 20px; }
+    h1, h2, h3 { color:#38bdf8; }
+    nav { position:sticky; top:0; background:#111; padding:10px 20px; display:flex; justify-content:space-between; align-items:center; }
+    nav a { color:#ccc; margin-left:15px; text-decoration:none; font-size:0.9rem; }
+    nav a:hover { color:#38bdf8; }
+    .hero { display:flex; gap:30px; align-items:center; flex-wrap:wrap; }
+    .hero img { width:230px; height:300px; object-fit:cover; border-radius:12px; border:2px solid #38bdf8; }
+    .tag { display:inline-block; padding:5px 10px; margin:4px 4px 0 0; background:#1a1a22; border-radius:20px; font-size:0.8rem; }
+    .card { background:#15151d; padding:20px; border-radius:12px; border:1px solid #333; margin-bottom:20px; }
+    footer { text-align:center; padding:30px; color:#777; }
+    a { color:#38bdf8; }
+    a:hover { color:#6fd3ff; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <strong style="color:#38bdf8;">ZACH ARVIEUX</strong>
+  <div>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#certs">Certifications</a>
+    <a href="#experience">Experience</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <img src="zach.jpg" alt="Portrait of Zach Arvieux">
+  <div>
+    <h1>Information Security Analyst</h1>
+    <p>
+      I’m a full-time Information Security Analyst based in Emporia, Kansas, and a Cybersecurity student at Fort Hays State University.
+      I specialize in protecting systems, supporting IT operations, and solving technical challenges that keep organizations secure and productive.
+    </p>
+
+    <div>
+      <span class="tag">Security+</span>
+      <span class="tag">Cybersecurity</span>
+      <span class="tag">Networking</span>
+      <span class="tag">IT Operations</span>
+      <span class="tag">GitHub: zacharvieux</span>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <h2>About Me</h2>
+  <div class="card">
+    <p>
+      My background combines real-world information security work with academic cybersecurity training.
+      I currently work full-time as an Information Security Analyst, where I help maintain secure infrastructure, support users, and protect systems.
+    </p>
+    <p>
+      I’m also pursuing a Bachelor’s in Cybersecurity at Fort Hays State University to deepen my knowledge of security architecture, defensive operations, and risk management.
+    </p>
+  </div>
+</section>
+
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="card">
+    <h3>Security</h3>
+    <p>Information Security, Endpoint Security, Mobile Device Security, Infrastructure Security</p>
+
+    <h3>Networking</h3>
+    <p>Network Administration, LAN, Network Hardware, Monitoring Tools, Configuration</p>
+
+    <h3>IT Operations</h3>
+    <p>Desktop Support, Troubleshooting, Windows Environments, Infrastructure Management</p>
+  </div>
+</section>
+
+<section id="certs">
+  <h2>Certifications</h2>
+  <div class="card">
+    <h3>CompTIA Security+</h3>
+    <p>Industry-recognized credential validating cybersecurity fundamentals, network security, threat management, and incident response.</p>
+  </div>
+</section>
+
+<section id="experience">
+  <h2>Experience & Education</h2>
+  <div class="card">
+    <h3>Information Security Analyst — Full-time</h3>
+    <p><strong>Flint Hills Technical College</strong></p>
+    <p>
+      Supporting information security and IT operations across the college, protecting infrastructure, assisting users, and maintaining secure systems.
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>Bachelor's in Cybersecurity — In Progress</h3>
+    <p><strong>Fort Hays State University</strong></p>
+  </div>
+
+  <div class="card">
+    <h3>Cybersecurity Program</h3>
+    <p><strong>Flint Hills Technical College — Completed</strong></p>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <div class="card">
+    <p>Email: <a href="mailto:zacharvieux@gmail.com">zacharvieux@gmail.com</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/zach-arvieux" target="_blank">linkedin.com/in/zach-arvieux</a></p>
+    <p>GitHub: <a href="https://github.com/zacharvieux" target="_blank">github.com/zacharvieux</a></p>
+    <p>Twitch: <a href="https://www.twitch.tv/warphang" target="_blank">twitch.tv/warphang</a></p>
+  </div>
+</section>
+
+<footer>
+  © <span id="year"></span> Zach Arvieux
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

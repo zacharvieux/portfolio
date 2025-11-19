@@ -363,4 +363,818 @@
 
     .highlight {
       color: var(--text-main);
-      font-weight
+      font-weight: 500;
+    }
+
+    .about-cards {
+      display: grid;
+      gap: 0.9rem;
+    }
+
+    .pill-card {
+      border-radius: 1.1rem;
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      background: rgba(15, 23, 42, 0.92);
+      padding: 0.85rem 1rem;
+      font-size: 0.85rem;
+      display: grid;
+      gap: 0.2rem;
+    }
+
+    .pill-card-title {
+      font-weight: 600;
+      font-size: 0.86rem;
+    }
+
+    .pill-meta {
+      font-size: 0.78rem;
+      color: var(--text-subtle);
+    }
+
+    @media (max-width: 880px) {
+      .about-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .chip {
+      padding: 0.4rem 0.85rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      font-size: 0.8rem;
+      color: var(--text-subtle);
+      background: rgba(15, 23, 42, 0.95);
+    }
+
+    .skills-columns {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.25rem;
+      margin-top: 1rem;
+    }
+
+    .skills-col h4 {
+      margin: 0 0 0.35rem;
+      font-size: 0.9rem;
+    }
+
+    .skills-col p {
+      margin: 0 0 0.75rem;
+      color: var(--text-subtle);
+      font-size: 0.83rem;
+    }
+
+    .skills-col .chip-row {
+      gap: 0.4rem;
+    }
+
+    @media (max-width: 820px) {
+      .skills-columns {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.25rem;
+      margin-top: 1.2rem;
+    }
+
+    .project-card {
+      border-radius: 1.25rem;
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      background: rgba(15, 23, 42, 0.92);
+      padding: 1rem;
+      display: grid;
+      gap: 0.6rem;
+      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.85);
+    }
+
+    .project-label {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--accent);
+    }
+
+    .project-title {
+      font-size: 0.98rem;
+      margin: 0;
+    }
+
+    .project-body {
+      font-size: 0.85rem;
+      color: var(--text-subtle);
+    }
+
+    .project-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.78rem;
+      color: var(--text-subtle);
+      gap: 0.35rem;
+      flex-wrap: wrap;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem;
+    }
+
+    .project-tag {
+      padding: 0.2rem 0.55rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.35);
+    }
+
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.2rem;
+      font-size: 0.8rem;
+      padding: 0.3rem 0.55rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.35);
+    }
+
+    .project-link span:last-child {
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 980px) {
+      .projects-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 680px) {
+      .projects-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .timeline {
+      border-left: 1px solid rgba(148, 163, 184, 0.45);
+      padding-left: 1.25rem;
+      margin-top: 1.2rem;
+      display: grid;
+      gap: 1.1rem;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 0.6rem;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -1.75rem;
+      top: 0.25rem;
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: radial-gradient(circle, #38bdf8, transparent);
+      box-shadow: 0 0 16px rgba(56, 189, 248, 0.85);
+    }
+
+    .timeline-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.75rem;
+      font-size: 0.8rem;
+      flex-wrap: wrap;
+    }
+
+    .timeline-role {
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .timeline-meta {
+      font-size: 0.78rem;
+      color: var(--text-subtle);
+    }
+
+    .timeline-body {
+      margin-top: 0.35rem;
+      font-size: 0.85rem;
+      color: var(--text-subtle);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.3fr);
+      gap: 1.8rem;
+      align-items: flex-start;
+    }
+
+    .contact-card {
+      border-radius: 1.3rem;
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      background: rgba(15, 23, 42, 0.94);
+      padding: 1.1rem 1.2rem;
+      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.85);
+      font-size: 0.9rem;
+      display: grid;
+      gap: 0.6rem;
+    }
+
+    .contact-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+    }
+
+    .contact-label {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--accent);
+    }
+
+    .social-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.35rem;
+    }
+
+    .social-pill {
+      padding: 0.35rem 0.8rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      font-size: 0.8rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .social-pill span:last-child {
+      font-size: 0.95rem;
+    }
+
+    .contact-form {
+      display: grid;
+      gap: 0.7rem;
+      font-size: 0.85rem;
+    }
+
+    .field {
+      display: grid;
+      gap: 0.2rem;
+    }
+
+    .field label {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.13em;
+      color: var(--text-subtle);
+    }
+
+    .field input,
+    .field textarea {
+      border-radius: 0.9rem;
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      background: rgba(15, 23, 42, 0.9);
+      padding: 0.6rem 0.75rem;
+      font-family: inherit;
+      font-size: 0.9rem;
+      color: var(--text-main);
+      resize: vertical;
+      min-height: 44px;
+    }
+
+    .field input:focus,
+    .field textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.4);
+    }
+
+    .field small {
+      color: var(--text-subtle);
+      font-size: 0.75rem;
+    }
+
+    .form-footnote {
+      font-size: 0.75rem;
+      color: var(--text-subtle);
+      margin-top: 0.35rem;
+    }
+
+    @media (max-width: 860px) {
+      .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    footer {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem 2.5rem;
+      font-size: 0.78rem;
+      color: var(--text-subtle);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      border-top: 1px solid rgba(15, 23, 42, 0.85);
+    }
+
+    .footer-right {
+      display: flex;
+      gap: 0.85rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-pill {
+      padding: 0.25rem 0.65rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      background: rgba(15, 23, 42, 0.9);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="nav">
+      <div class="nav-left">
+        <div class="logo">ZA</div>
+        <div class="brand-text">
+          <span>ZACH ARVIEUX</span>
+          <span>InfoSec Analyst • Cybersecurity</span>
+        </div>
+      </div>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#projects">Work</a>
+        <a href="#experience">Timeline</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <a href="#contact" class="nav-cta">
+        Let’s connect <span>↗</span>
+      </a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero" id="top">
+      <div>
+        <div class="hero-kicker">
+          Information Security Analyst • Cybersecurity
+          <span>Full-time · Flint Hills Technical College</span>
+          <span>Student · Fort Hays State University</span>
+        </div>
+        <h1 class="hero-title">
+          Hi, I’m <span>Zach Arvieux</span>.
+        </h1>
+        <p class="hero-subtitle">
+          I’m a full-time Information Security Analyst helping protect and support
+          IT infrastructure, while working toward my bachelor’s in Cybersecurity at
+          Fort Hays State University. I like turning complex technical problems
+          into clear, workable solutions for the people who rely on the systems I
+          help secure.
+        </p>
+        <div class="hero-tags">
+          <span class="tag">Information Security Analyst</span>
+          <span class="tag">CompTIA Security+</span>
+          <span class="tag">Cybersecurity Student (FHSU)</span>
+          <span class="tag">GitHub: @zacharvieux</span>
+          <span class="tag">Twitch: warphang</span>
+          <span class="tag">Emporia, Kansas</span>
+        </div>
+        <div class="hero-actions">
+          <a href="#projects" class="btn-primary">
+            View my work <span>↓</span>
+          </a>
+          <a href="#contact" class="btn-ghost">
+            Get in touch <span>✉</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <img src="zach.jpg" alt="Portrait of Zach Arvieux" class="hero-photo" />
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+      <div class="section-label">About</div>
+      <h2 class="section-title">Who I am</h2>
+      <p class="section-subtitle">
+        A security-focused IT professional balancing a full-time analyst role with
+        a Cybersecurity bachelor’s program.
+      </p>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            I’m a <span class="highlight">full-time Information Security Analyst</span>
+            at Flint Hills Technical College and a
+            <span class="highlight">Cybersecurity student at Fort Hays State University</span>.
+            Day to day, I help support and protect the technology people rely on — from
+            networks and infrastructure, to endpoints and users.
+          </p>
+          <p>
+            My background includes <span class="highlight">network administration,
+            network security, desktop support, and troubleshooting</span>. I’ve worked
+            across infrastructure and end-user environments, gaining experience with
+            Windows, mobile devices, and the tools that keep an organization running.
+          </p>
+          <p>
+            I’m especially interested in how <span class="highlight">security and
+            operations overlap</span> — making sure that systems are not only locked
+            down, but also usable, documented, and maintainable for the IT teams and
+            users who interact with them every day.
+          </p>
+          <p>
+            As I advance through my degree at FHSU, I’m building on my hands-on
+            experience with deeper knowledge of cyber defense, risk, and security
+            architecture, so I can take on more responsibility and tackle bigger
+            security challenges.
+          </p>
+        </div>
+        <div class="about-cards">
+          <div class="pill-card">
+            <div class="pill-card-title">Quick snapshot</div>
+            <div class="pill-meta">
+              • Information Security Analyst · Flint Hills Technical College<br />
+              • Cybersecurity bachelor’s student · Fort Hays State University<br />
+              • Based in Emporia, Kansas
+            </div>
+          </div>
+          <div class="pill-card">
+            <div class="pill-card-title">Certification</div>
+            <div class="pill-meta">
+              • <span class="highlight">CompTIA Security+</span><br />
+              Validating core security knowledge and best practices for securing
+              networks, devices, and data.
+            </div>
+          </div>
+          <div class="pill-card">
+            <div class="pill-card-title">What I’m looking for</div>
+            <div class="pill-meta">
+              • Opportunities to deepen my information security work<br />
+              • Roles that blend infrastructure, operations, and security<br />
+              • Teams that value documentation, learning, and collaboration
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+      <div class="section-label">Skills</div>
+      <h2 class="section-title">What I work with</h2>
+      <p class="section-subtitle">
+        A mix of security, networking, and IT operations skills built through
+        full-time work and academic programs.
+      </p>
+
+      <div class="skills-columns">
+        <div class="skills-col">
+          <h4>Security & Cyber</h4>
+          <p>
+            Keeping systems and infrastructure secure while still usable for the
+            people who rely on them.
+          </p>
+          <div class="chip-row">
+            <span class="chip">Information Security</span>
+            <span class="chip">Network Security</span>
+            <span class="chip">Infrastructure Security</span>
+            <span class="chip">Endpoint Security (PCs & devices)</span>
+            <span class="chip">Mobile Device Security</span>
+            <span class="chip">Risk-aware troubleshooting</span>
+          </div>
+        </div>
+        <div class="skills-col">
+          <h4>Networking & Infrastructure</h4>
+          <p>
+            Experience supporting and understanding the networks and platforms
+            everything runs on.
+          </p>
+          <div class="chip-row">
+            <span class="chip">Network Administration</span>
+            <span class="chip">Network Infrastructure</span>
+            <span class="chip">Network Installation</span>
+            <span class="chip">Network Hardware</span>
+            <span class="chip">LAN (Local Area Network)</span>
+            <span class="chip">Network Configuration</span>
+            <span class="chip">Network Monitoring Tools</span>
+            <span class="chip">Telecom / infrastructure awareness</span>
+          </div>
+        </div>
+        <div class="skills-col">
+          <h4>IT Operations & Support</h4>
+          <p>
+            Helping users, maintaining systems, and making sure the environment
+            stays stable and well-documented.
+          </p>
+          <div class="chip-row">
+            <span class="chip">Desktop Support</span>
+            <span class="chip">Troubleshooting</span>
+            <span class="chip">Windows environments</span>
+            <span class="chip">Mobile devices</span>
+            <span class="chip">Infrastructure Management</span>
+            <span class="chip">IT Infrastructure Operations</span>
+            <span class="chip">Project coordination</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Certifications -->
+    <section id="certifications">
+      <div class="section-label">Certifications</div>
+      <h2 class="section-title">Verified knowledge</h2>
+      <p class="section-subtitle">
+        Industry certification that backs up my hands-on experience and academic work.
+      </p>
+
+      <div class="about-cards">
+        <div class="pill-card">
+          <div class="pill-card-title">CompTIA Security+</div>
+          <div class="pill-meta">
+            Globally recognized certification focused on core cybersecurity skills:
+            network security, threat management, incident response, access control,
+            and security best practices. It reinforces my day-to-day work as an
+            Information Security Analyst and my ongoing Cybersecurity studies.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Work / Projects -->
+    <section id="projects">
+      <div class="section-label">Work</div>
+      <h2 class="section-title">Areas I’ve been focusing on</h2>
+      <p class="section-subtitle">
+        A few representative areas of work that show how I combine security,
+        networking, and IT operations in my current role and studies.
+      </p>
+
+      <div class="projects-grid">
+        <article class="project-card">
+          <div class="project-label">Security & operations</div>
+          <h3 class="project-title">Information Security Analyst · FHTC</h3>
+          <p class="project-body">
+            Supporting information security and IT operations for Flint Hills
+            Technical College. This includes working with infrastructure and
+            endpoints, helping secure systems, and coordinating with IT to keep
+            services available and reliable for staff, faculty, and students.
+          </p>
+          <div class="project-meta">
+            <div class="project-tags">
+              <span class="project-tag">Information Security</span>
+              <span class="project-tag">IT Operations</span>
+              <span class="project-tag">Infrastructure support</span>
+            </div>
+            <span class="project-link">
+              Professional role
+              <span>•</span>
+            </span>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-label">Networking</div>
+          <h3 class="project-title">Network & Infrastructure Support</h3>
+          <p class="project-body">
+            Building and using skills in network administration, network security,
+            and infrastructure management. Experience with network hardware, LAN
+            environments, and monitoring tools to help keep connectivity stable and
+            secure.
+          </p>
+          <div class="project-meta">
+            <div class="project-tags">
+              <span class="project-tag">Network Administration</span>
+              <span class="project-tag">Network Security</span>
+              <span class="project-tag">Monitoring tools</span>
+            </div>
+            <span class="project-link">
+              Ongoing focus
+              <span>•••</span>
+            </span>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-label">Education & growth</div>
+          <h3 class="project-title">Cybersecurity Degree · FHSU</h3>
+          <p class="project-body">
+            Advancing from hands-on infrastructure and support work into deeper
+            cybersecurity concepts through a Bachelor’s program at Fort Hays State
+            University. Coursework complements real-world experience in security,
+            networks, and IT environments.
+          </p>
+          <div class="project-meta">
+            <div class="project-tags">
+              <span class="project-tag">Cybersecurity</span>
+              <span class="project-tag">Defensive security</span>
+              <span class="project-tag">Academic foundations</span>
+            </div>
+            <span class="project-link">
+              In progress
+              <span>↻</span>
+            </span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Experience / Education -->
+    <section id="experience">
+      <div class="section-label">Timeline</div>
+      <h2 class="section-title">Experience & education</h2>
+      <p class="section-subtitle">
+        How my full-time work and education fit together as I grow in information
+        security and IT.
+      </p>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-header">
+            <div>
+              <div class="timeline-role">
+                Information Security Analyst
+              </div>
+              <div class="timeline-meta">
+                Flint Hills Technical College · Full-time · Current
+              </div>
+            </div>
+            <div class="timeline-meta">Information security & infrastructure</div>
+          </div>
+          <div class="timeline-body">
+            Supporting security and IT operations across the organization, working
+            with infrastructure, endpoints, and users. Combining troubleshooting,
+            network awareness, and security practices to help keep systems stable
+            and protected.
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-header">
+            <div>
+              <div class="timeline-role">
+                Cybersecurity Student · Bachelor’s
+              </div>
+              <div class="timeline-meta">
+                Fort Hays State University · In progress
+              </div>
+            </div>
+            <div class="timeline-meta">Cybersecurity degree</div>
+          </div>
+          <div class="timeline-body">
+            Building a deeper theoretical and practical understanding of
+            cybersecurity, including defensive strategies, risk, and security
+            architecture — all while applying concepts back into my day-to-day
+            work as an analyst.
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-header">
+            <div>
+              <div class="timeline-role">
+                Cybersecurity Program
+              </div>
+              <div class="timeline-meta">
+                Flint Hills Technical College · Completed program
+              </div>
+            </div>
+            <div class="timeline-meta">Hands-on technical foundation</div>
+          </div>
+          <div class="timeline-body">
+            Developed a foundation in security, networking, and IT through
+            technical coursework and labs, which helped launch my current
+            information security role and ongoing education path.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <div class="section-label">Contact</div>
+      <h2 class="section-title">Let’s connect</h2>
+      <p class="section-subtitle">
+        Open to connecting about cybersecurity, information security roles, or IT
+        infrastructure and operations. I’m always interested in learning from
+        others and exploring new opportunities.
+      </p>
+
+      <div class="contact-grid">
+        <div class="contact-card">
+          <div class="contact-row">
+            <div>
+              <div class="contact-label">Preferred channels</div>
+              <div>These reach me directly.</div>
+            </div>
+          </div>
+
+          <div class="social-row">
+            <a href="mailto:zacharvieux@gmail.com" class="social-pill">
+              <span>✉</span>
+              <span>Email</span>
+            </a>
+            <a href="https://www.linkedin.com/in/zach-arvieux" class="social-pill" target="_blank" rel="noopener noreferrer">
+              <span>in</span>
+              <span>LinkedIn</span>
+            </a>
+            <a href="https://github.com/zacharvieux" class="social-pill" target="_blank" rel="noopener noreferrer">
+              <span>💻</span>
+              <span>GitHub</span>
+            </a>
+            <a href="https://www.twitch.tv/warphang" class="social-pill" target="_blank" rel="noopener noreferrer">
+              <span>▶</span>
+              <span>Twitch</span>
+            </a>
+          </div>
+
+          <p>
+            I’m happy to share more about my environment, tools, and the kinds of
+            projects I’m working on once we connect.
+          </p>
+        </div>
+
+        <div class="contact-form">
+          <div class="field">
+            <label for="name">Name</label>
+            <input id="name" type="text" placeholder="Your name" />
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" type="email" placeholder="you@example.com" />
+          </div>
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea
+              id="message"
+              rows="4"
+              placeholder="Tell me how we might work together..."
+            ></textarea>
+            <small>
+              This form is currently a front-end demo. Connect it to a service
+              like Formspree, Netlify Forms, or your own backend to receive
+              messages.
+            </small>
+          </div>
+          <button class="btn-primary" type="button">
+            Send message (demo) <span>✉</span>
+          </button>
+          <div class="form-footnote">
+            Tip: once this site is live, wiring this form up makes it much easier
+            for people to contact you.
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div>© <span id="year"></span> · Zach Arvieux</div>
+    <div class="footer-right">
+      <span class="footer-pill">Information Security Analyst</span>
+      <span class="footer-pill">Cybersecurity Student</span>
+      <span class="footer-pill">CompTIA Security+</span>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    document.querySelectorAll('a[href^="#"]').forEach((link) => {
+      link.addEventListener("click", (e) => {
+        const targetId = link.getAttribute("href");
+        if (!targetId || targetId === "#") return;
+        const targetEl = document.querySelector(targetId);
+        if (!targetEl) return;
+
+        e.preventDefault();
+        window.scrollTo({
+          top: targetEl.offsetTop - 72,
+          behavior: "smooth",
+        });
+      });
+    });
+  </script>
+</body>
+</html>

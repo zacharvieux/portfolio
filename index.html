@@ -1050,12 +1050,12 @@
       <div class="section-label">Projects</div>
       <h2 class="section-title">Python coursework projects</h2>
       <p class="section-subtitle">
-        A selection of Python projects developed as part of my coursework.
-        Each folder in this GitHub repository represents a different assignment or application.
+        A selection of Python scripts developed as part of my coursework.
+        Each script below lives in my public GitHub repository.
       </p>
 
       <div class="projects-grid" id="github-projects">
-        <!-- GitHub project cards will be injected here -->
+        <!-- Fallback content will be inserted by JS, then replaced by real cards -->
       </div>
     </section>
 
@@ -1241,42 +1241,89 @@
     const projectsContainer = document.getElementById("github-projects");
 
     if (projectsContainer) {
+      // Fallback card while loading
+      projectsContainer.innerHTML = `
+        <article class="project-card">
+          <div class="project-label">Python coursework</div>
+          <h3 class="project-title">Python Class Projects</h3>
+          <p class="project-body">
+            A collection of Python assignments and scripts developed for my coursework.
+            Browse the repository to see individual exercises, mini-projects, and experiments.
+          </p>
+          <div class="project-meta">
+            <div class="project-tags">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">Coursework</span>
+            </div>
+            <a
+              class="project-link"
+              href="https://github.com/zacharvieux/Python"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View repo <span>↗</span>
+            </a>
+          </div>
+        </article>
+      `;
+
       fetch("https://api.github.com/repos/zacharvieux/Python/contents")
         .then((response) => response.json())
         .then((items) => {
           if (!Array.isArray(items)) {
-            projectsContainer.innerHTML =
-              "<p>Unable to load projects from GitHub right now.</p>";
+            console.warn("GitHub API did not return an array:", items);
+            return; // keep fallback card
+          }
+
+          // Filter: only .py files starting with 'zacharvieux'
+          const entries = items.filter((item) => {
+            if (item.type !== "file") return false;
+            const name = item.name.toLowerCase();
+            return name.endsWith(".py") && name.startsWith("zacharvieux");
+          });
+
+          if (!entries.length) {
+            projectsContainer.innerHTML = `
+              <p>No matching Python scripts found yet. Check back soon.</p>
+            `;
             return;
           }
 
-          // Only top-level folders are treated as projects
-          const dirs = items.filter((item) => item.type === "dir");
+          // Clear fallback and render real cards
+          projectsContainer.innerHTML = "";
 
-          if (!dirs.length) {
-            projectsContainer.innerHTML =
-              "<p>No Python projects found yet. Check back soon.</p>";
-            return;
-          }
-
-          dirs.forEach((dir) => {
+          entries.forEach((entry) => {
             const card = document.createElement("article");
             card.className = "project-card";
 
             const label = document.createElement("div");
             label.className = "project-label";
-            label.textContent = "Python coursework";
+            label.textContent = "Python class script";
 
             const title = document.createElement("h3");
             title.className = "project-title";
-            title.textContent = dir.name
-              .replace(/[-_]/g, " ")
-              .replace(/\b\w/g, (c) => c.toUpperCase());
+
+            // Turn 'zacharvieuxMidtermProject.py' or 'zacharvieux_midtermproject.py' into 'Midterm Project'
+            const rawName = entry.name.replace(/\.py$/i, "");
+            let baseName = rawName.replace(/^zacharvieux[_-]?/i, "");
+
+            // Insert space between camelCase boundaries: midtermProject -> midterm Project
+            baseName = baseName.replace(/([a-z])([A-Z])/g, "$1 $2");
+
+            // Replace underscores/dashes with spaces
+            baseName = baseName.replace(/[-_]+/g, " ").trim();
+
+            // Fallback if somehow empty
+            const displayName = baseName || rawName.replace(/\.py$/i, "");
+
+            title.textContent = displayName.replace(/\b\w/g, (c) =>
+              c.toUpperCase()
+            );
 
             const body = document.createElement("p");
             body.className = "project-body";
             body.textContent =
-              "Python assignment or project from my coursework. Explore the source code, structure, and any documentation in this folder.";
+              "Python script created as part of my coursework. Open it on GitHub to review the source code and logic.";
 
             const meta = document.createElement("div");
             meta.className = "project-meta";
@@ -1290,7 +1337,7 @@
 
             const tag2 = document.createElement("span");
             tag2.className = "project-tag";
-            tag2.textContent = "Class project";
+            tag2.textContent = "Coursework";
 
             tags.appendChild(tag1);
             tags.appendChild(tag2);
@@ -1298,11 +1345,11 @@
             const link = document.createElement("a");
             link.className = "project-link";
             link.href =
-              dir.html_url ||
-              `https://github.com/zacharvieux/Python/tree/main/${dir.name}`;
+              entry.html_url ||
+              `https://github.com/zacharvieux/Python/blob/main/${entry.name}`;
             link.target = "_blank";
             link.rel = "noopener noreferrer";
-            link.innerHTML = 'View on GitHub <span>↗</span>';
+            link.innerHTML = 'View script <span>↗</span>';
 
             meta.appendChild(tags);
             meta.appendChild(link);
@@ -1317,8 +1364,7 @@
         })
         .catch((error) => {
           console.error("Error loading GitHub projects:", error);
-          projectsContainer.innerHTML =
-            "<p>Sorry, your GitHub projects could not be loaded right now.</p>";
+          // leave fallback card in place
         });
     }
   </script>
